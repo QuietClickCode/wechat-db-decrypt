@@ -66,7 +66,7 @@ class WechatDatabaseDecrypt:
         return self.m_db_folder
 
     def CalculateKey(self, db_filepath):
-        """取得数据库密码，如果没有 db_folder，将使用从注册表取得的目录"""
+        """计算数据库密码"""
         salt = open(db_filepath, 'rb').read(16)
         derived_key = hashlib.pbkdf2_hmac('sha1', self.m_raw_key, salt, 64000, dklen=32)
         return binascii.hexlify(derived_key).decode()
