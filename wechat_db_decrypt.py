@@ -28,7 +28,7 @@ class WechatDatabaseDecryptException(Exception):
 class WechatDatabaseDecrypt:
     def Init(self, offset_wechat_id, offset_db_key_pointer,
             process_name='wechat.exe'):  # 似乎有其他进程名的需求
-        """GetPassword 前需要调用，失败抛出 WechatDatabaseDecryptException
+        """使用前需要调用，失败抛出 WechatDatabaseDecryptException
         offset_wechat_id: 存放 wechat id 得指针的地址相对于 wechatwin.dll 的偏移
         offset_db_key_pointer: 存放数据库密码的指针的地址相对于 wechatwin.dll 的偏移
         偏移依赖于特定微信版本
