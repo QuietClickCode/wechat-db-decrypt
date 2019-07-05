@@ -59,3 +59,8 @@
 2. 编译的时候利用这个 [sqlcipher-windows](https://github.com/CovenantEyes/sqlcipher-windows) 。
 
 python3.6 32 位可以使用目录下的 egg 安装 `python -m easy_install pysqlcipher3-1.0.2-py3.6-win32.egg` 。
+
+若遇到 ` ImportError: DLL load failed: 找不到指定的模块。`，可能是需要 OpenSSL 1.0.x 的 libeay32.dll。
+> 试试下把OPENSSL的bin目录加到Path里，内部需要调用到libeay32.dll。如果没有安装OPENSSL，可以到这里下载对应版本 https://slproweb.com/products/Win32OpenSSL.html
+
+感谢 [@cpiz](https://github.com/cpiz) 提供的解决方法。
